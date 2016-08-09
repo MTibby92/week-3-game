@@ -33,7 +33,7 @@ function displayWord (x) {
 
 // Checks if the character input has been chosen before, returns true or false
 function checkGuess (x, arr) {
-	return arr.includes(x)
+	return arr.includes(' ' + x) //the added space in the check is necessary, since i'm pushing a space to the arr later
 }
 
 // checks if the character is in the final word
@@ -43,7 +43,7 @@ function checkInWord (x, word) {
 
 // Add character to array of guesses
 function appendToGuesses (x, arr) {
-	arr.push(' ' + x)
+	arr.push(' ' + x) //appends the character and a space to the arr, all checks need to include the space
 }
 
 // Replaces the displayed blank string with the correctly guessed character
@@ -88,10 +88,12 @@ function reset () {
 document.onkeyup = function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-	console.log('The selected word is ' + currentWord)
-	console.log('The users guess is ' + userGuess)
+	// console.log('The selected word is ' + currentWord)
+	// console.log('The users guess is ' + userGuess)
+	// console.log('The arr guesses contains ' + guesses)
 
 	if (!checkGuess(userGuess, guesses)) {
+		
 		guessesRemaining--
 		if (checkInWord(userGuess, currentWord)) {
 			displayedWord = appendToWord(userGuess, displayedWord, currentWord)
