@@ -114,8 +114,8 @@ document.onkeyup = function(event) {
 
 	// Taking the variable data and displaying them in HTML
 	var winsHtml = '<p>Wins = ' + wins + '</p>';
-	var displayWordHtml = '<p>Current word = ' + displayedWord + '</p>'
-	var guessesRemainingHtml = '<p>Number of guesses remaining =' + guessesRemaining + '</p>'
+	var displayWordHtml = '<p>Current word = <span>' + displayedWord + '</span></p>'
+	var guessesRemainingHtml = '<p>Number of guesses remaining = ' + guessesRemaining + '</p>'
 	var guessesHtml = '<p>Letters guessed already = ' + guesses + '</p>'
 
 
