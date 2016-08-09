@@ -1,0 +1,28 @@
+1) Page loads
+
+2) Blank screen is presented with just the html; 
+	the text to start, 
+	Wins blank (not even 0), 
+	15 guesses
+	the blanks for the word (word is already chosen for display)
+	text for where the guesses will appear
+
+3) User presses a key
+
+4) key is stored
+
+5) check if the key has been chosen before
+
+	a) if key hasn't been chosen, check if key is in the word
+
+		i) if key in word, replace blank with the key; also show key as a guess
+
+		ii) if key not in word, display as a guessed letter; add as a guessed key
+
+	b) if key has been chosen, do nothing
+
+6) check if word is complete
+
+	a) if word is complete, increment wins
+
+	b) else do nothing
