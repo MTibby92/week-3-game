@@ -1,7 +1,7 @@
 var finalWord = ''
 var partialWord = ''
 
-var game {
+var game = {
 	wins: 0,
 	guesses: [],
 	guessesRemaining: 15,
@@ -53,11 +53,48 @@ function reset () {
 	game.guesses = []
 	game.guessesRemaining = 15
 	finalWord = game.generateWord()
-	partialWord = displayWord(finalWord)
+	partialWord = game.displayWord(finalWord)
 }
 
 
+finalWord = game.generateWord()
+partialWord = game.displayWord(finalWord)
 
 document.onkeyup = function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+	if (!game.checkGuess(userGuess, guesses)) {
+		
+		game.guessesRemaining--
+		if (game.checkInWord(userGuess, finalWord)) {
+			partialWord = game.appendToWord(userGuess, partialWord, finalWord)
+			game.appendToGuesses(userGuess, game.guesses)
+		}else {
+			game.appendToGuesses(userGuess, game.guesses)
+		}
+	}
+
+	if (game.guessesRemaining == 0) {
+		reset()
+	}
+
+	if (game.checkWin(partialWord, finalWord)) {
+		game.wins++
+		reset()
+	}
+
+
+
+	// Taking the variable data and displaying them in HTML
+	var winsHtml = '<p>Wins = ' + game.wins + '</p>';
+	var displayWordHtml = '<p>Current word = <span>' + partialWord + '</span></p>'
+	var guessesRemainingHtml = '<p>Number of guesses remaining = ' + game.guessesRemaining + '</p>'
+	var guessesHtml = '<p>Letters guessed already = ' + game.guesses + '</p>'
+
+
+	// Placing the updated html
+	document.querySelector('#wins').innerHTML = winsHtml;
+	document.querySelector('#current-word').innerHTML = displayWordHtml;
+	document.querySelector('#guesses-remaining').innerHTML = guessesRemainingHtml;
+	document.querySelector('#guesses').innerHTML = guessesHtml;
 }
