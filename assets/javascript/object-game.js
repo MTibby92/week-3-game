@@ -6,7 +6,7 @@ var game = {
 	guesses: [],
 	guessesRemaining: 15,
 	generateWord: function (){
-		var options = ['abraham', 'isaac', 'jacob', 'judah']
+		var options = ['usa', 'china', 'japan', 'england', 'france', 'brazil']
 		var selection = options[Math.floor(Math.random() * options.length)]
 		return selection
 	},
@@ -80,6 +80,10 @@ document.onkeyup = function(event) {
 
 	if (game.checkWin(partialWord, finalWord)) {
 		game.wins++
+		var elem = document.createElement('img');
+		elem.setAttribute('src', './assets/images/rio-olympic-logo.png');
+		elem.setAttribute('alt', 'Flower');
+		document.getElementById('picture').appendChild(elem);
 		reset()
 	}
 
