@@ -1,3 +1,30 @@
 #current-word span{
 	letter-spacing: 7px;
 }
+
+.page-container {
+	margin: 25px;
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+#header {
+	width: 100%;
+	text-align: center;
+	/*margin-top: 25px;*/
+	margin-bottom: 35px;
+	font-family: 'Courgette', cursive;
+	font-size: 170%;
+}
+
+#box1 {
+	line-height: 1.5;
+	font-family: 'Courgette', cursive;
+	font-size: 125%;
+}
+
+#pic {
+	border: solid 1px black;	
+}

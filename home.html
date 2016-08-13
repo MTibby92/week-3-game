@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Matt's Hangman Game</title>
-	<link rel='stylesheet' type='text/css' href='./assets/css/reset.css'>
-	<link rel='stylesheet' type='text/css' href='./assets/css/style.css'>
-	<script type='text/javascript' src='./assets/javascript/game.js'></script>
+    <title>Matt's Hangman Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='./assets/css/reset.css'>
+    <link rel='stylesheet' type='text/css' href='./assets/css/style.css'>
+    <script type='text/javascript' src='./assets/javascript/object-game.js'></script>
 </head>
+
 <body>
+    <div class='page-container'>
+        <div id="header">
+            <img src="./assets/images/rio-olympic-logo.png">
+            <h1>Hangman</h1>
+        </div>
 
-<div class='page-container'>
-	<h1>Hangman</h1>
+        <div id="box1">
+            <p>Press any key to get started!</p>
+            <p id='wins'>Wins = </p>
+            <p id='current-word'>Current word = </p>
+            <p id='guesses-remaining'>Number of guesses remaining = 15</p>
+            <p id='guesses'>Letters guessed already =</p>
+        </div>
 
-	<div>
-		<p>Press any key to get started!</p>
-		<p id='wins'>Wins = </p>
-		<p id='current-word'>Current word = </p>
-		<p id='guesses-remaining'>Number of guesses remaining = 15</p>
-		<p id='guesses'>Letters guessed already =</p>
-	</div>
-
-</div>
-
+        <div id="picture">
+            <img id="pic" src="" alt="">
+        </div>
+    </div>
 </body>
+
 </html>
