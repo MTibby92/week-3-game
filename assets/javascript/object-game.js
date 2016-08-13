@@ -80,10 +80,24 @@ document.onkeyup = function(event) {
 
 	if (game.checkWin(partialWord, finalWord)) {
 		game.wins++
-		var elem = document.createElement('img');
-		elem.setAttribute('src', './assets/images/rio-olympic-logo.png');
-		elem.setAttribute('alt', 'Flower');
-		document.getElementById('picture').appendChild(elem);
+		// Display image
+
+		var flags = {
+			'usa': 'us.png',
+			'china': 'cn.png',
+			'japan': 'jp.png',
+			'england': 'gb.png',
+			'france': 'fr.png',
+			'brazil': 'br.png'
+		}
+		var url = flags[finalWord]
+
+		var elem = document.getElementById('pic')
+		//var elem = document.createElement('img');
+		//elem.setAttribute('src', './assets/images/rio-olympic-logo.png');
+		elem.setAttribute('src', './assets/images/' + url);
+		elem.setAttribute('alt', 'Flag');
+		//document.getElementById('picture').appendChild(elem);
 		reset()
 	}
 
